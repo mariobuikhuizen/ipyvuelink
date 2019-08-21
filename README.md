@@ -2,9 +2,9 @@
 
 Create Jupyter widgets from a Vue CLI project.
 
-Examples: [ipyvuelink-example-1](https://github.com/mariobuikhuizen/ipyvuelink-example-1),
-[2](https://github.com/mariobuikhuizen/ipyvuelink-example-2) and
-[3](https://github.com/mariobuikhuizen/ipyvuelink-example-3). See example
+Examples: [ipyvuelink-example-1](https://github.com/mariobuikhuizen/ipyvuelink-example-1/tree/ipyvuelink),
+[2](https://github.com/mariobuikhuizen/ipyvuelink-example-2/tree/ipyvuelink) and
+[3](https://github.com/mariobuikhuizen/ipyvuelink-example-3/tree/ipyvuelink). See example
 [4](https://github.com/mariobuikhuizen/ipyvuelink-example-4) for a project with multiple widgets.
 
 ## Usage
