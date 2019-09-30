@@ -2,7 +2,9 @@ import { kebabCase } from 'lodash';
 
 export default (createElement, view) => {
     const { model } = view;
-    const exposedProps = model.keys().filter(key => !key.startsWith('_') && !['style', 'layout'].includes(key));
+    const inheritedAttributes = ['children', 'slot', 'v_model', 'style_', 'class_', 'attributes'];
+    const exposedProps = model.keys().filter(key => !key.startsWith('_') && !['style', 'layout'].includes(key)
+        && !inheritedAttributes.includes(key));
 
     return createElement({
         created() {
