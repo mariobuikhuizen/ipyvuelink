@@ -88,6 +88,8 @@ elif args.command == 'build-lib':
     build_lib()
 elif args.command == 'regenerate-project':
     generate(True)
+    build_lib()
+    build_prod()
 elif args.command == 'publish-pypi':
     print('Not yet implemented')
 elif args.command == 'publish-npm':
