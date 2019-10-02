@@ -117,8 +117,8 @@ def gen_js_component(component):
     return textwrap.dedent(f"""
         /* eslint camelcase: off */
         import {{ VueModel }} from 'jupyter-vue';
-        import '../../../../../dist/component.css';
-        import {import_variant} from '../../../../../dist/component.umd';
+        import '../../vue_project_dist_mirror/component.css';
+        import {import_variant} from '../../vue_project_dist_mirror/component.umd';
 
         export class {name}Model extends VueModel {{
             defaults() {{

@@ -18,6 +18,7 @@
   ],
   "files": [
     "src/",
+    "vue_project_dist_mirror",
     "lib/",
     "dist/"
   ],

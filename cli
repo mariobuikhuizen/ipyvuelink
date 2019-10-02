@@ -2,6 +2,7 @@
 import argparse
 import os
 from subprocess import check_call
+from distutils.dir_util import copy_tree
 from generate_project import (generate, build_dir, target_dir, settings, ipy_name, jupyter_name)
 
 
@@ -27,6 +28,8 @@ def build_lib():
         if vuetify_loader_removed:
             check_call('yarn add vuetify-loader@^1.2.2 --dev', cwd=target_dir, shell=True)
 
+    copy_tree(f'{target_dir}/dist', f'{build_dir}/js/vue_project_dist_mirror')
+
 
 def sdist():
     check_call('python setup.py sdist', cwd=build_dir, shell=True)
@@ -51,6 +54,7 @@ def install():
     check_call('pip install -e .', cwd=build_dir, shell=True)
     check_call(f'jupyter nbextension install --py --symlink --sys-prefix {ipy_name}', shell=True)
     check_call(f'jupyter nbextension enable --py --sys-prefix {ipy_name}', shell=True)
+    check_call(f'jupyter labextension install . --no-build', cwd=f'{build_dir}/js', shell=True)
 
 
 def install_dev(force):
@@ -63,7 +67,7 @@ parser = argparse.ArgumentParser(usage='''cli command [args]
 
 commands:
     install-dev             Generates jupyter-extension project, builds it and installs in
-                            developement mode. This has to be done only once.
+                            developement mode (notebook and lab). This has to be done only once.
     watch                   Runs JavaScript build in watch mode.
     build-lib               Builds vue-cli project with target lib. Use this when code has changed.
     regenerate-project      Regenerated project. Use this when ipyvuelink.yaml has changed
