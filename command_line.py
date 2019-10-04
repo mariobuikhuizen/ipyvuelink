@@ -11,7 +11,7 @@ def handle_command_line():
 
     commands:
         install-dev             Generates jupyter-extension project, builds it and installs in
-                                developement mode (notebook and lab). This has to be done only once.
+                                development mode (notebook and lab). This has to be done only once.
         watch-vue-project       Build and watch vue-cli project.
         watch-extension         Build and watch extension.
         regenerate-project      Regenerated project. Use this when ipyvuelink.yaml has changed
