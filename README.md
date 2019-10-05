@@ -59,6 +59,7 @@ components:
 ```
 (my-env)$ ipyvuelink/cli dev-install-extension
 ```
+Also run this command when ipyvuelink.yaml or the submodule ipyvuelink has changed.
 
 #### Each session:
 
@@ -71,11 +72,6 @@ components:
 7. Goto 5 until ready to test in notebook
 8. Refresh the page and see changes in the notebook on `http://localhost:8888/notebooks/yourNotebook.ipynb` (or `http://localhost:8888/lab` for Lab)
 9. Goto 4
-
-#### When ipyvuelink.yaml changes:
-```
-(my-env)$ ipyvuelink/cli regenerate-extension
-```
 
 ### Release
 

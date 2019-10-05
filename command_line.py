@@ -10,11 +10,16 @@ def handle_command_line():
     parser = argparse.ArgumentParser(usage='''cli command
 
     commands:
-        dev-install-extension   Generates the jupyter-extension, builds it and installs in
-                                development mode (notebook and lab). This has to be done only once.
+        dev-install-extension   Generate the jupyter-extension, build it and install in development
+                                mode (notebook and lab). Run this once when:
+                                  - starting or git cloning a project 
+                                  - using a new environment
+                                  - ipyvuelink.yaml has changed
+                                  - the submodule ipyvuelink has changed
+                                The 'watch-extension' has to be stopped before running.
         watch-vue-project       Build and watch vue-cli project.
         watch-extension         Build and watch extension.
-        regenerate-extension    Regenerate extension. Use this when ipyvuelink.yaml has changed
+
         publish-pypi            Publish extension on PyPi.
         publish-npm             Publish extension on NPM.
     ''')
@@ -79,13 +84,6 @@ def watch_extension():
         pass
 
 
-def regenerate_extension():
-    delete_directory(extension_dir)
-    generate_extension()
-    build_vue_project()
-    build_extension()
-
-
 def publish_pypi():
     print('Not yet implemented')
 
@@ -106,3 +104,10 @@ def install_extension_dependencies():
 def build_extension():
     install_extension_dependencies()
     execute(f'{extension_dir}/js', f'npm run prepare')
+
+
+def regenerate_extension():
+    delete_directory(extension_dir)
+    generate_extension()
+    build_vue_project()
+    build_extension()
