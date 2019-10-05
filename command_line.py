@@ -10,11 +10,11 @@ def handle_command_line():
     parser = argparse.ArgumentParser(usage='''cli command
 
     commands:
-        install-dev             Generates jupyter-extension project, builds it and installs in
+        dev-install-extension   Generates the jupyter-extension, builds it and installs in
                                 development mode (notebook and lab). This has to be done only once.
         watch-vue-project       Build and watch vue-cli project.
         watch-extension         Build and watch extension.
-        regenerate-project      Regenerated project. Use this when ipyvuelink.yaml has changed
+        regenerate-extension    Regenerate extension. Use this when ipyvuelink.yaml has changed
         publish-pypi            Publish extension on PyPi.
         publish-npm             Publish extension on NPM.
     ''')
@@ -23,13 +23,13 @@ def handle_command_line():
 
     args = parser.parse_args()
 
-    if args.command == 'install-dev':
+    if args.command == 'dev-install-extension':
         dev_install_extension()
     elif args.command == 'watch-vue-project':
         build_vue_project(watch=True)
     elif args.command == 'watch-extension':
         watch_extension()
-    elif args.command == 'regenerate-project':
+    elif args.command == 'regenerate-extension':
         regenerate_extension()
     elif args.command == 'publish-pypi':
         publish_pypi()

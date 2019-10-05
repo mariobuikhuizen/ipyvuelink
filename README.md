@@ -32,7 +32,7 @@ entry: components/mycomponent.vue
 
 # Different workarounds are necessary to make Vuetify or BootstrapVue work inside a notebook. 
 # vuetify | bootstrapvue
-variant: vuetify
+component_library_used: vuetify
 
 # Components which are exposed.
 components:
@@ -57,24 +57,24 @@ components:
 
 #### Once:
 ```
-(my-env)$ ipyvuelink/cli install-dev
+(my-env)$ ipyvuelink/cli dev-install-extension
 ```
 
 #### Each session:
 
 1. In terminal 1: `(my-env)$ yarn serve`
-2. In terminal 2: `(my-env)$ ipyvuelink/cli watch`
-3. In terminal 3: `(my-env)$ jupyter notebook yourNotebook.ipynb` (or `(ipyvuelink-env)$ jupyter lab yourNotebook.ipynb --watch` for Lab)
-4. Change code
-5. See changes in the hot reloaded app on `http://localhost:8080`
-6. Goto 4 until ready to test in notebook
-7. In terminal 4: `(my-env)$ ipyvuelink/cli build-lib`
+2. In terminal 2: `(my-env)$ ipyvuelink/cli watch-vue-project`
+3. In terminal 4: `(my-env)$ ipyvuelink/cli watch-extension`
+4. In terminal 3: `(my-env)$ jupyter notebook yourNotebook.ipynb` (or `(ipyvuelink-env)$ jupyter lab yourNotebook.ipynb --watch` for Lab)
+5. Change code
+6. See changes in the hot reloaded app on `http://localhost:8080`
+7. Goto 5 until ready to test in notebook
 8. Refresh the page and see changes in the notebook on `http://localhost:8888/notebooks/yourNotebook.ipynb` (or `http://localhost:8888/lab` for Lab)
 9. Goto 4
 
 #### When ipyvuelink.yaml changes:
 ```
-(my-env)$ ipyvuelink/cli regenerate-project
+(my-env)$ ipyvuelink/cli regenerate-extension
 ```
 
 ### Release
