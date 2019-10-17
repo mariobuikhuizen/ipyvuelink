@@ -96,7 +96,7 @@ traitlet_mapping = {
     'Integer': 'Integer',
     'Float': 'Float',
     'Object': 'Dict',
-    'Boolean': 'Boolean',
+    'Boolean': 'Bool',
     'Any': 'Any'
 }
 
