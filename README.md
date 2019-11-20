@@ -77,5 +77,9 @@ Also run this command when ipyvuelink.yaml or the submodule ipyvuelink has chang
 ### Release
 
 * Bump version in package.json
-* Run `(my-env)$ ipyvuelink/cli release-pypi` to release on PyPI
-* Run `(my-env)$ ipyvuelink/cli release-npm` to release on NPM
+* publish online
+    * Run `(my-env)$ ipyvuelink/cli release-pypi` to release on PyPI
+    * Run `(my-env)$ ipyvuelink/cli release-npm` to release on NPM
+ * OR publish local
+    * Run `(my-env)$ ipyvuelink/cli release-local` to publish extension locally as a pip package 
+    with file name [extension_name]-[version].tar.gz (javascript included)

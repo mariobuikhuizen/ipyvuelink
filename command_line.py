@@ -20,6 +20,9 @@ def handle_command_line():
         watch-vue-project       Build and watch vue-cli project.
         watch-extension         Build and watch extension.
 
+        publish-local           Publish extension locally as a pip package (javascript included),
+                                installable by running:
+                                    pip install [extension_name]-[version].tar.gz  
         publish-pypi            Publish extension on PyPi.
         publish-npm             Publish extension on NPM.
     ''')
@@ -36,6 +39,8 @@ def handle_command_line():
         watch_extension()
     elif args.command == 'regenerate-extension':
         regenerate_extension()
+    elif args.command == 'publish-local':
+        publish_local()
     elif args.command == 'publish-pypi':
         publish_pypi()
     elif args.command == 'publish-npm':
@@ -83,6 +88,10 @@ def watch_extension():
     except KeyboardInterrupt:
         pass
 
+
+def publish_local():
+    regenerate_extension()
+    execute(extension_dir, f'python setup.py sdist --dist-dir={vue_project_dir}')
 
 def publish_pypi():
     print('Not yet implemented')
