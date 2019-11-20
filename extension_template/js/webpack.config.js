@@ -9,24 +9,6 @@ var rules = [
         test: /\.(woff|woff2|eot|ttf|otf)$/,
         loader: 'file-loader',
     },
-    {
-        test: /\.less$/,
-        use: [
-            {
-                loader: 'style-loader', // creates style nodes from JS strings
-            },
-            {
-                loader: 'css-loader', // translates CSS into CommonJS
-            },
-            {
-                loader: 'less-loader',
-                options: {
-                    strictMath: true,
-                    paths: [path.resolve(__dirname, 'node_modules')],
-                }
-            }
-        ],
-    },
 ];
 
 module.exports = [

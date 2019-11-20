@@ -1,7 +1,7 @@
 import { DOMWidgetView } from '@jupyter-widgets/base';
 import Vue from 'vue'; // eslint-disable-line import/no-extraneous-dependencies
 import BootstrapVue from 'bootstrap-vue';
-import './styles.less';
+import './styles.css';
 import createLinkedComponent from '../link';
 
 Vue.use(BootstrapVue);
