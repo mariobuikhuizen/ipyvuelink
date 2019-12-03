@@ -145,7 +145,7 @@ setup_args = {
     'include_package_data': True,
     'data_files': get_data_files(),
     'install_requires': [
-        'ipyvue>=0.1.0',
+        'ipyvue>=1.0.0,<2',
     ],
     'packages': find_packages(),
     'zip_safe': False,
